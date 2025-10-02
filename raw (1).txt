@@ -140,13 +140,13 @@ end)
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/Library-ui/refs/heads/main/Redzhubui"))()
 
 local Window = redzlib:MakeWindow({
-    Title = "Mhzin Client | Brookhaven RP 🌌🏡 4.1",
-    SubTitle = "by The Rk_davida",
-    SaveFolder = "testando Mhzin Client"
+    Title = "Mhzin Hub | Brookhaven RP 🌌🏡 1.0",
+    SubTitle = "by The Wolf",
+    SaveFolder = "testando Mhzin Hub"
   })
 
   Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://97023202251640", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://7229442422", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
@@ -173,9 +173,9 @@ local Tab11 = Window:MakeTab({"Scripts", "scroll"})
 Tab1:AddSection({"Créditos do Hub"})
 
 Tab1:AddDiscordInvite({
-    Name = "Mhzin Client",
-    Description = "https://discord.gg/xcBdjWAsa",
-    Logo = "rbxassetid://97023202251640",
+    Name = "Mhzin Hub",
+    Description = "Server Oficial",
+    Logo = "rbxassetid://7229442422",
     Invite = "https://discord.gg/xcBdjWAsa",
 })
 
@@ -319,7 +319,7 @@ end
 Tab2:AddTextBox({
     Name = "Nome do Jogador",
     Description = "Digite parte do nome",
-    PlaceholderText = "ex: lo → Rk_davida",
+    PlaceholderText = "ex: lo → The Wolf",
     Callback = function(Value)
         local foundPlayer = findPlayerByPartialName(Value)
         if foundPlayer then
@@ -1283,7 +1283,7 @@ Tab4:AddButton({
 })
 
 Tab4:AddParagraph({
-    Title = "to sem ideias para colocar aqui._.",
+    Title = "Jaja vem coisa nova ta em beta",
     Content = ""
 })
 
