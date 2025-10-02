@@ -1,8 +1,8 @@
 local cartolalib = loadstring(game:HttpGet("https://raw.githubusercontent.com/wx-sources/CartolaLibrary/refs/heads/main/Redzhubui%20(1).txt"))()
 
 local Window = cartolalib:MakeWindow({
-    Title = "Cartola Hub       ",
-    SubTitle = "by EstherDeveloper and Davi999",
+    Title = "Mhzin teste beta       ",
+    SubTitle = "by EstherDeveloper and The Wolf",
     SaveFolder = "CartolaLibrary"
 })
 
@@ -186,7 +186,7 @@ local function TornadoPirateFree()
     -- Aviso no chat
     if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
         TextChatService.TextChannels.RBXGeneral:SendAsync(
-            "[⚠️AVISO] UM TORNADO SURGIU! Cartola Hub by Esther"
+            "[⚠️AVISO] UM TORNADO SURGIU! The wolf by Esther"
         )
     end
 
