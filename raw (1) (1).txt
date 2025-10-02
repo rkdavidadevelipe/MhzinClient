@@ -1,4 +1,4 @@
--- // Mhzin Client Loading + Hub Purple
+-- // Mhzin Hub Loading + Hub Purple
 local CoreGui = game:GetService("CoreGui")
 
 -- ===========================
@@ -2167,16 +2167,8 @@ createSoundDropdown("Selecione um meme", {
         {name = "Gemido ultra rápido", id = "128863565301778"},
         {name = "vai g0z@?", id = "116293771329297"},
         {name = "G0z33iiii", id = "93462644278510"},
-        {name = "Hommmm ", id = "133135656929513"},
         {name = "gemido1", id = "105263704862377"},
-        {name = " gemido2", id = "92186909873950"},
-        {name = "sus sex", id = "128137573022197"},
-        {name = "gemido estranho", id = "131219411501419"},
-        {name = "gemido kawai", id = "100409245129170"},
         {name = "Hentai wiaaaaan", id = "88332347208779"},
-        {name = "iamete cunasai", id = "108494476595033"},
-        {name = "dodichan onnn...", id = "134640594695384"},
-        {name = "Loly gemiD0", id = "119277017538197"},
          {name = "ai poison", id = "115870718113313"},
          {name = "chegachega SUS", id = "77405864184828"},
          {name = "uwu", id = "76820720070248"},
@@ -2217,7 +2209,6 @@ createSoundDropdown("Selecione um meme", {
         {name = "sai dai lava prato", id = "101232400175829"},
         {name = "se e loko numconpeça", id = "78442476709262"},
         {name = "mita sequer que eu too uma", id = "94889439372168"},
-        {name = "Hoje vou ser tua mulher e tu", id = "90844637105538"},
         {name = "Deita aqui eu mandei vc deitar sirens", id = "100291188941582"},
         {name = "miau", id = "131804436682424"},
         {name = "skibidi", id = "128771670035179"},
@@ -2311,13 +2302,10 @@ createSoundDropdown("Selecione um meme", {
         {name = "Tu e um beta", id = "130233956349541"},
         {name = "Porfavor n tira eu nao", id = "85321374020324"},
         {name = "Olá beleza vc pode me dá muitos", id = "74235334504693"},
-        {name = "Discord sus", id = "122662798976905"},
         {name = "rojao apito", id = "6549021381"},
         {name = "off", id = "1778829098"},
         {name = "Kazuma kazuma", id = "127954653962405"},
-        {name = "sometourado", id = "123592956882621"},
         {name = "Estouradoespad", id = "136179020015211"},
-        {name = "Alaku bommm", id = "110796593805268"},
         {name = "busss", id = "139841197791567"},
         {name = "Estourado wItb", id = "137478052262430"},
         {name = "sla", id = "116672405522828"},
