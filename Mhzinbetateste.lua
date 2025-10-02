@@ -1221,71 +1221,161 @@ Tab3:AddParagraph({
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Tab4:AddParagraph({
-    Title = "Funções para você usar em você",
-    Content = ""
+    Title = "InteraÃ§Ãµes e Teleportes de Casas",
+    Content = "Funcionalidades essenciais e trolls para as casas (Requer 'SelectHouse' definido)."
 })
 
--- Botão para remover ban de todas as casas
+-- BotÃ£o para Atualizar Lista de Casas
 Tab4:AddButton({
-    Name = "Remover Ban de Todas as Casas",
-    Description = "Tenta remover o ban de todas as casas ",
+    Name = "Atualizar Lista de Casas",
+    Description = "Recarrega a lista de casas disponÃ­veis no dropdown de seleÃ§Ã£o.",
     Callback = function()
-        local successCount = 0
-        local failCount = 0
-        for i = 1, 37 do
-            local bannedBlockName = "BannedBlock" .. i
-            local bannedBlock = Workspace:FindFirstChild(bannedBlockName, true)
-            if bannedBlock then
-                local success, _ = pcall(function()
-                    bannedBlock:Destroy()
-                end)
-                if success then
-                    successCount = successCount + 1
-                else
-                    failCount = failCount + 1
-                end
-            end
-        end
-        for _, house in pairs(Workspace:GetDescendants()) do
-            if house.Name:match("BannedBlock") then
-                local success, _ = pcall(function()
-                    house:Destroy()
-                end)
-                if success then
-                    successCount = successCount + 1
-                else
-                    failCount = failCount + 1
-                end
-            end
-        end
-        if successCount > 0 then
+        print("Atualizar Lista de Casas button clicked.")
+        pcall(DropdownHouseUpdate) 
+    end
+})
+
+-- BotÃ£o para Teleportar para Casa
+Tab4:AddButton({
+    Name = "Teleportar para Casa",
+    Description = "Teleporta vocÃª para a localizaÃ§Ã£o da Casa selecionada.",
+    Callback = function()
+        local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
+        if House and game.Players.LocalPlayer.Character then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(House.WorldPivot.Position)
             game.StarterGui:SetCore("SendNotification", {
-                Title = "Sucesso",
-                Text = "Bans removidos de " .. successCount .. " casas!",
-                Duration = 5
+                Title = "Teleporte",
+                Text = "Teletransportado para " .. tostring(SelectHouse) .. "!",
+                Duration = 3
             })
-        end
-        if failCount > 0 then
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "Aviso",
-                Text = "Falha ao remover bans de " .. failCount .. " casas.",
-                Duration = 5
-            })
-        end
-        if successCount == 0 and failCount == 0 then
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "Aviso",
-                Text = "Nenhum ban encontrado para remover.",
-                Duration = 5
-            })
+        else
+            warn("Casa nÃ£o encontrada: " .. tostring(SelectHouse))
         end
     end
 })
 
+-- BotÃ£o para Teleportar para Cofre
+Tab4:AddButton({
+    Name = "Teleportar para Cofre",
+    Description = "Teleporta vocÃª diretamente para a localizaÃ§Ã£o do Cofre da casa.",
+    Callback = function()
+        local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
+        if House and House:FindFirstChild("HousePickedByPlayer") and game.Players.LocalPlayer.Character then
+            local safe = House.HousePickedByPlayer.HouseModel:FindFirstChild("001_Safe")
+            if safe then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(safe.WorldPivot.Position)
+            else
+                warn("Cofre nÃ£o encontrado na casa: " .. tostring(SelectHouse))
+            end
+        else
+            warn("Casa nÃ£o encontrada ou desocupada: " .. tostring(SelectHouse))
+        end
+    end
+})
+
+---
+
 Tab4:AddParagraph({
-    Title = "Jaja vem coisa nova ta em beta",
+    Title = "FunÃ§Ãµes Troll & Noclip",
+    Content = "Controles de ativaÃ§Ã£o/desativaÃ§Ã£o para interaÃ§Ãµes na casa."
+})
+
+-- Toggle para Tocar Campainha (Troll)
+Tab4:AddToggle({
+    Name = "Tocar Campainha em Loop",
+    Description = "Toca a campainha da casa selecionada repetidamente a cada 0.5s.",
+    Default = false,
+    Callback = function(Value)
+        getgenv().ChaosHubAutoSpawnDoorbellValue = Value
+        spawn(function()
+            while getgenv().ChaosHubAutoSpawnDoorbellValue do
+                local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
+                if House and House:FindFirstChild("HousePickedByPlayer") then
+                    local doorbell = House.HousePickedByPlayer.HouseModel:FindFirstChild("001_DoorBell")
+                    if doorbell and doorbell:FindFirstChild("TouchBell") then
+                        pcall(function()
+                            fireclickdetector(doorbell.TouchBell.ClickDetector)
+                        end)
+                    end
+                end
+                task.wait(0.5)
+            end
+        end)
+    end
+})
+
+-- Toggle para Bater na Porta (Troll)
+Tab4:AddToggle({
+    Name = "Bater na Porta em Loop",
+    Description = "Bate na porta da casa selecionada repetidamente a cada 0.5s.",
+    Default = false,
+    Callback = function(Value)
+        getgenv().ChaosHubAutoSpawnDoorValue = Value
+        spawn(function()
+            while getgenv().ChaosHubAutoSpawnDoorValue do
+                local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
+                if House and House:FindFirstChild("HousePickedByPlayer") then
+                    local doors = House.HousePickedByPlayer.HouseModel:FindFirstChild("001_HouseDoors")
+                    if doors and doors:FindFirstChild("HouseDoorFront") and doors.HouseDoorFront:FindFirstChild("Knock") then
+                        pcall(function()
+                            fireclickdetector(doors.HouseDoorFront.Knock.TouchBell.ClickDetector)
+                        end)
+                    end
+                end
+                task.wait(0.5)
+            end
+        end)
+    end
+})
+
+-- Toggle para Atravessar Porta (No-Clip)
+Tab4:AddToggle({
+    Name = "Atravessar Porta da Casa (No-Clip)",
+    Description = "Desativa a colisÃ£o (CanCollide) da porta da frente para vocÃª passar.",
+    Default = false,
+    Callback = function(Value)
+        pcall(function()
+            local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
+            if House and House:FindFirstChild("HousePickedByPlayer") then
+                local housepickedbyplayer = House.HousePickedByPlayer
+                local doors = housepickedbyplayer.HouseModel:FindFirstChild("001_HouseDoors")
+                if doors and doors:FindFirstChild("HouseDoorFront") then
+                    for _, Base in ipairs(doors.HouseDoorFront:GetChildren()) do
+                        if Base:IsA("BasePart") then
+                            Base.CanCollide = not Value
+                        end
+                    end
+                end
+            end
+        end)
+    end
+})
+
+---
+
+Tab4:AddParagraph({
+    Title = "Outras FunÃ§Ãµes",
     Content = ""
 })
+
+-- Toggle para Auto Unban
+Tab4:AddToggle({
+    Name = "Auto Unban de Casas",
+    Description = "Tenta ativar a funÃ§Ã£o de unban automÃ¡tico (Requer 'startAutoUnban' definida).",
+    Default = false,
+    Callback = function(state)
+        isUnbanActive = state
+        if isUnbanActive then
+            print("Auto Unban Activated")
+            spawn(startAutoUnban)
+        else
+            print("Auto Unban Deactivated")
+        end
+    end
+})
+
+Tab4:AddLabel("Autounban das houses by Esther")
+
 
 
 
