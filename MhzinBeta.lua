@@ -2370,71 +2370,66 @@ createSoundDropdown("Selecione um terror ou efeito", {
         {name = "Jumpscare Scream", id = "6150329916"},
         {name = "FNaF: Security Breach", id = "2050522547"},
         {name = "llllllll", id = "5029269312"},
-        {name = "loud jumpscare", id = "7236490488"},
-        {name = "fnaf", id = "6982454389"},
-        {name = "Pinkamena Jumpscare 1", id = "192334186"},
-        {name = "Ennard Jumpscare 2", id = "629526707"},
-        {name = "a sla medo dino", id = "125506416092123"},
-        {name = "Backrooms Bacteria Pitfalls ", id = "81325342128575"},
-        
-        {name = "error Infinite", id = "3893790326"},
-        {name = "Screaming Meme", id = "107732411055226"},
-        {name = "Jumpscare - SCP CB", id = "97098997494905"},
-        {name = "mirror jumpscare", id = "80005164589425"},
-        {name = "PTLD-39 Jumpscare", id = "5581462381"},
-        {name = "jumpscare:Play()", id = "121519648044128"},
-        {name = "mimic jumpscare", id = "91998575878959"},
-        {name = "DOORS Glitch Jumpscare Sound", id = "96377507894391"},
-        {name = "FNAS 4 Nightmare Mario", id = "99804224106385"},
-        {name = "Death House I Jumpscare Sound", id = "8151488745"},
-        {name = "Shinky Jumpscare", id = "123447772144411"},
-        {name = "FNaTI Jumpscare Oblitus casa", id = "18338717319"},
-        {name = "fnaf jumpscare loadmode", id = "18911896588"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""}
-    }
-}, "jumpscar")
-
-
-
+        ---------------------------------------------------------------------------------------------------------------------------------
+       
+                                    -- === Tab 8: Troll Musica === --
 ---------------------------------------------------------------------------------------------------------------------------------
-                                          -- === Tab 8: Troll Musica === --
----------------------------------------------------------------------------------------------------------------------------------
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RE = ReplicatedStorage:WaitForChild("RE")
 
 local function tocarMusica(id)
-    local ReplicatedStorage = game:GetService("ReplicatedStorage")
-    
-    -- Rádio (ToolMusicText)
+    local musicId = tostring(id) 
+
+    -- =================================================================
+    -- 1. Rádio (ToolMusicText) - Confirma o evento para o rádio que você segura
+    -- =================================================================
     local argsRadio = {
         [1] = "ToolMusicText",
-        [2] = id
+        [2] = musicId
     }
-    ReplicatedStorage:WaitForChild("RE"):WaitForChild("PlayerToolEvent"):FireServer(unpack(argsRadio))
+    RE:WaitForChild("PlayerToolEvent"):FireServer(unpack(argsRadio))
     
-    -- Casa (PickHouseMusicText)
+    -- =================================================================
+    -- 2. Casa (PickHouseMusicText) - Confirma o evento para a música da casa
+    -- =================================================================
     local argsCasa = {
         [1] = "PickHouseMusicText",
-        [2] = id
+        [2] = musicId
     }
-    ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Player1sHous1e"):FireServer(unpack(argsCasa))
+    RE:WaitForChild("1Player1sHous1e"):FireServer(unpack(argsCasa))
 
-    -- Carro (PickingCarMusicText)
+    -- =================================================================
+    -- 3. Carro Principal (PickingCarMusicText) - Veículos Motorizados Padrão
+    -- =================================================================
     local argsCarro = {
         [1] = "PickingCarMusicText",
-        [2] = id
+        [2] = musicId
     }
-    ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Player1sCa1r"):FireServer(unpack(argsCarro))
+    RE:WaitForChild("1Player1sCa1r"):FireServer(unpack(argsCarro))
 
-    -- Scooter (PickingScooterMusicText)
+    -- =================================================================
+    -- 4. Scooter/Overboard/Bicicleta (PickingScooterMusicText) - Veículos Sem Motor
+    -- * Este evento é o que provavelmente estava faltando em alguns veículos.
+    -- =================================================================
     local argsScooter = {
         [1] = "PickingScooterMusicText",
-        [2] = id
+        [2] = musicId
     }
-    ReplicatedStorage:WaitForChild("RE"):WaitForChild("1NoMoto1rVehicle1s"):FireServer(unpack(argsScooter))
+    RE:WaitForChild("1NoMoto1rVehicle1s"):FireServer(unpack(argsScooter))
+
+    -- =================================================================
+    -- 5. Tentativa de Evento Genérico (Para garantir)
+    -- * Alguns veículos usam um evento mais genérico para todas as músicas.
+    -- =================================================================
+    local argsGenerico = {
+        [1] = "MusicText",
+        [2] = musicId
+    }
+    local vehicleMusicEvent = RE:FindFirstChild("VehicleMusicEvent") -- Tenta encontrar um evento genérico
+    if vehicleMusicEvent then
+        vehicleMusicEvent:FireServer(unpack(argsGenerico))
+    end
 end
 
 local function isValidMusicId(value)
@@ -2445,7 +2440,7 @@ Tab8:AddTextBox({
     Name = "ID da música",
     PlaceholderText = "Digite o ID e pressione Enter",
     Callback = function(value)
-        if value and value ~= "" then
+        if isValidMusicId(value) then
             tocarMusica(tostring(value))
         end
     end
@@ -2496,13 +2491,14 @@ createMusicDropdown("Forró", {
         {name = "forró sao joao", id = "106364874935196"},
         {name = "forró engraçado paia", id = "76524290482399"},
         {name = "100% forro vaquejada", id = "92295159623916"},
-        
+      
         {name = "PASTOR MIRIM E A LÍNGUA DOS ANJOS", id = "71153532555470"},
         {name = "PARA NÃO ESQUECER QUEM SOMOS", id = "88937498361674"},
         {name = "Uno zero", id = "112959083808887"},
         {name = "Iate do neymar", id = "135738534706063"},
         {name = "Batidao na aldeia", id = "79953696595578"},
         {name = "", id = ""},
+     
         {name = "", id = ""}
     }
 }, "Option 1")
@@ -2514,6 +2510,7 @@ createMusicDropdown("Músicas e Memes Aleatório", {
         {name = "Meu corpo, minhas regras", id = "127587901595282"},
         {name = "$$$$gg$$$$gg", id = "137471775091253"},
         {name = "Megalovania but its only the melodies", id = "104500091160463"},
+        
         {name = "androphono strikes back", id = "78312089943968"},
         {name = "Bamm Bamm", id = "128730685516895"},
         {name = "chupa cabra", id = "132890273173295"},
@@ -2521,6 +2518,7 @@ createMusicDropdown("Músicas e Memes Aleatório", {
         {name = "Garoto de Copacabana", id = "135648634110254"},
         {name = "CELL!", id = "117634275895085"},
         {name = "Boa vibe em Ubatuba", id = "139059061493558"},
+      
         {name = "SLIP AWAY", id = "126152928520174"},
         {name = "Alone in Motion", id = "122379348696948"},
         {name = "Fade Away", id = "81002139735874"},
@@ -2553,6 +2551,7 @@ createMusicDropdown("Funk", {
         {name = "trippi troop funk", id = "73049389767013"},
         {name = "bombini funkphonk", id = "88814770244609"},
         {name = "pre treino", id = "136869502216760"},
+        
         {name = "CVRL", id = "124244582950595"},
         {name = "batida Brega Violino (Beat Brega Funk)", id = "99399643204701"},
         {name = "Dança do Canguru (Pke Gaz1nh)", id = "86876136192157"},
@@ -2563,6 +2562,7 @@ createMusicDropdown("Funk", {
         {name = "Faixa estronda", id = "121187736532042"},
         {name = "Ritmo Pixelado", id = "93928823862203"},
         {name = "Viagem Sonora", id = "79349174602261"},
+        
         {name = "Melodia Virtual", id = "139147474886402"},
         {name = "Melodia Serena", id = "97011217688307"},
         {name = "SENTA", id = "124085422276732"},
@@ -2574,7 +2574,6 @@ createMusicDropdown("Funk", {
         {name = "CAPPUCCINO ASSASSINO (SPEDUP)", id = "132733033157915"},
         {name = "haha (NGI)", id = "122114766584918"},
         {name = "DO PO", id = "114207745067816"},
-        {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
@@ -2612,6 +2611,7 @@ createMusicDropdown("Phonk", {
         {name = "phonk6", id = "139435437308948"},
         {name = "phonk chapaquente", id = "109189438638906"},
         {name = "phonk rajada", id = "105126065014034"},
+    
         {name = "rede globo", id = "138487820505005"},
         {name = "phonk indiano", id = "87968531262747"},
         {name = "vapo do vapo", id = "106317184644394"},
@@ -2619,6 +2619,7 @@ createMusicDropdown("Phonk", {
         {name = "phonk slower", id = "122852029094656"},
         {name = "phonk9", id = "91760524161503"},
         {name = "phonk10", id = "73140398421340"},
+        
         {name = "phonk11", id = "137962454483542"},
         {name = "phonk12", id = "84733736048142"},
         {name = "phonk13", id = "106322173003761"},
@@ -2627,6 +2628,7 @@ createMusicDropdown("Phonk", {
         {name = "phonk16", id = "115567432786512"},
         {name = "phonk toq", id = "71304501822029"},
         {name = "phonk hey", id = "132218979961283"},
+  
         {name = "phonk17", id = "102708912256857"},
         {name = "phonk18", id = "140642559093189"},
         {name = "phonk neve", id = "13530439660"},
@@ -2642,6 +2644,7 @@ createMusicDropdown("Phonk", {
         {name = "eoropa", id = "111346133543699"},
         {name = "atimosphekika", id = "77857496821844"},
         {name = "phonk ALL THE TIME", id = "123809083385992"},
+ 
         {name = "Lifelong Memory", id = "81929101024622"},
         {name = "Automotivo Blondie (Pke Gaz1nh)", id = "74564219749776"},
         {name = "สวัสดีคนไทย v2", id =  "118225359190317"},
@@ -2655,6 +2658,7 @@ createMusicDropdown("Phonk", {
         {name = "TOMA FUNK PHONK", id = "126291069838831"},
         {name = "PASSO BEM SOLTO X NEW JAZZ", id = "122706595087279"},
         {name = "MONTAGEM BIONICA DIAMANTE", id = "122338822665007"},
+        
         {name = "BALA SELVAGEM!", id = "96180057167470"},
         {name = "Luz <3", id = "74281337525581"},
         {name = "COMO TU", id = "86928685812280"},
@@ -2662,6 +2666,7 @@ createMusicDropdown("Phonk", {
         {name = "MONTAGEM SOLAR TROPICANO (SLOWED)", id = "109308273341422"},
         {name = "YO DE TI", id = "125181345407169"},
         {name = "Beauty, (Phonk), Super sped up", id = "71123357599630"},
+ 
         {name = "MONTAGEM BOOMBOX DO MALA FUNK", id = "86537505028256"},
         {name = "BRAZIL DO FUNK", id = "133498554139200"},
         {name = "BRR BRR PATAPIM FUNK", id = "117170901476451"},
@@ -2689,6 +2694,7 @@ createMusicDropdown("Phonk", {
         {name = "STORYMODECOOL", id = "87115976125426"},
         {name = "BLACK COFFEE FUNK", id = "82705137378395"},
         {name = "KOBALT", id = "79381341943021"},
+        
         {name = " andante bacterial", id = "105882833374061"},
         {name = "ANGEL Speed Up", id = "139593870988593"},
         {name = "LUTA ÉPICA", id = "73966367524216"},
@@ -2696,7 +2702,7 @@ createMusicDropdown("Phonk", {
         {name = "DA ZONA NTJ VERSON", id = "105770593501071"},
         {name = "HIPNOTIZA", id = "132015050363205"},
         {name = "MIDZUKI speed up", id = "129151948619922"},
-        
+       
         {name = "movimenta funk", id = "114994598691121"},
         {name = "CRISTAL", id = "103445348511856"},
         {name = "Letero funkphonk", id = "99409598156364"},
@@ -2704,6 +2710,7 @@ createMusicDropdown("Phonk", {
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
+      
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
@@ -2719,9 +2726,390 @@ Tab8:AddButton({
         tocarMusica("")
     end
 })
+            {name = "loud jumpscare", id = "7236490488"},
+        {name = "fnaf", id = "6982454389"},
+        {name = "Pinkamena Jumpscare 1", id = "192334186"},
+        {name = "Ennard Jumpscare 2", id = "629526707"},
+        {name = "a sla medo dino", id = "125506416092123"},
+        {name = "Backrooms Bacteria Pitfalls ", id = "81325342128575"},
+        
+        {name = "error Infinite", id = "3893790326"},
+        {name = "Screaming Meme", id = "107732411055226"},
+        {name = "Jumpscare - SCP CB", id = "97098997494905"},
+        {name = "mirror jumpscare", id = "80005164589425"},
+        {name = "PTLD-39 Jumpscare", id = "5581462381"},
+        {name = "jumpscare:Play()", id = "121519648044128"},
+        {name = "mimic jumpscare", id = "91998575878959"},
+        {name = "DOORS Glitch Jumpscare Sound", id = "96377507894391"},
+        {name = "FNAS 4 Nightmare Mario", id = "99804224106385"},
+        {name = "Death House I Jumpscare Sound", id = "8151488745"},
+        {name = "Shinky Jumpscare", id = "123447772144411"},
+        {name = "FNaTI Jumpscare Oblitus casa", id = "18338717319"},
+        {name = "fnaf jumpscare loadmode", id = "18911896588"},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""}
+    }
+}, "jumpscar")
 
+---------------------------------------------------------------------------------------------------------------------------------
+                                    -- === Tab 8: Troll Musica === --
+---------------------------------------------------------------------------------------------------------------------------------
 
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RE = ReplicatedStorage:WaitForChild("RE")
 
+local function tocarMusica(id)
+    local musicId = tostring(id) 
+
+    -- =================================================================
+    -- 1. Rádio (ToolMusicText) - Confirma o evento para o rádio que você segura
+    -- =================================================================
+    local argsRadio = {
+        [1] = "ToolMusicText",
+        [2] = musicId
+    }
+    RE:WaitForChild("PlayerToolEvent"):FireServer(unpack(argsRadio))
+    
+    -- =================================================================
+    -- 2. Casa (PickHouseMusicText) - Confirma o evento para a música da casa
+    -- =================================================================
+    local argsCasa = {
+        [1] = "PickHouseMusicText",
+        [2] = musicId
+    }
+    RE:WaitForChild("1Player1sHous1e"):FireServer(unpack(argsCasa))
+
+    -- =================================================================
+    -- 3. Carro Principal (PickingCarMusicText) - Veículos Motorizados Padrão
+    -- =================================================================
+    local argsCarro = {
+        [1] = "PickingCarMusicText",
+        [2] = musicId
+    }
+    RE:WaitForChild("1Player1sCa1r"):FireServer(unpack(argsCarro))
+
+    -- =================================================================
+    -- 4. Scooter/Overboard/Bicicleta (PickingScooterMusicText) - Veículos Sem Motor
+    -- * Este evento é o que provavelmente estava faltando em alguns veículos.
+    -- =================================================================
+    local argsScooter = {
+        [1] = "PickingScooterMusicText",
+        [2] = musicId
+    }
+    RE:WaitForChild("1NoMoto1rVehicle1s"):FireServer(unpack(argsScooter))
+
+    -- =================================================================
+    -- 5. Tentativa de Evento Genérico (Para garantir)
+    -- * Alguns veículos usam um evento mais genérico para todas as músicas.
+    -- =================================================================
+    local argsGenerico = {
+        [1] = "MusicText",
+        [2] = musicId
+    }
+    local vehicleMusicEvent = RE:FindFirstChild("VehicleMusicEvent") -- Tenta encontrar um evento genérico
+    if vehicleMusicEvent then
+        vehicleMusicEvent:FireServer(unpack(argsGenerico))
+    end
+end
+
+local function isValidMusicId(value)
+    return value and value ~= "" and value ~= "Option 1" and not value:match("novas musica adds") and not value:match("musica brasil") and not value:match("musica do meu interece") and not value:match("musica dls por elas") and not value:match("meme abaixo") and not value:match("estourada")
+end
+
+Tab8:AddTextBox({
+    Name = "ID da música",
+    PlaceholderText = "Digite o ID e pressione Enter",
+    Callback = function(value)
+        if isValidMusicId(value) then
+            tocarMusica(tostring(value))
+        end
+    end
+})
+
+-- Dropdowns para Tab8
+local function createMusicDropdown(title, musicOptions, defaultOption)
+    local musicNames = {}
+    local categoryMap = {}
+    for category, sounds in pairs(musicOptions) do
+        for _, music in ipairs(sounds) do
+            if music.name ~= "" then
+                table.insert(musicNames, music.name)
+                categoryMap[music.name] = {id = music.id, category = category}
+            end
+        end
+    end
+
+    local function playMusic(soundId)
+        tocarMusica(tostring(soundId)) -- Usa a função tocarMusica para tocar em todos os contextos
+    end
+
+    Tab8:AddDropdown({
+        Name = title,
+        Description = "all",
+        Default = defaultOption,
+        Multi = false,
+        Options = musicNames,
+        Callback = function(selectedSound)
+            if selectedSound and categoryMap[selectedSound] then
+                local soundId = categoryMap[selectedSound].id
+                if soundId and soundId ~= "" and soundId ~= "4354908569" then
+                    playMusic(soundId)
+                end
+            end
+        end
+    })
+end
+
+-- Dropdown "Forró"
+createMusicDropdown("Forró", {
+    ["forro"] = {
+        {name = "forró ja cansou", id = "74812784884330"},
+        {name = "lenbro ate hoje", id = "71531533552899"},
+        {name = "escolha certa", id = "107088620814881"},
+        {name = "forró da rezenha", id = "120973520531216"},
+        {name = "forró dudu", id = "74404168179733"},
+        {name = "forró sao joao", id = "106364874935196"},
+        {name = "forró engraçado paia", id = "76524290482399"},
+        {name = "100% forro vaquejada", id = "92295159623916"},
+      
+        {name = "PASTOR MIRIM E A LÍNGUA DOS ANJOS", id = "71153532555470"},
+        {name = "PARA NÃO ESQUECER QUEM SOMOS", id = "88937498361674"},
+        {name = "Uno zero", id = "112959083808887"},
+        {name = "Iate do neymar", id = "135738534706063"},
+        {name = "Batidao na aldeia", id = "79953696595578"},
+        {name = "", id = ""},
+     
+        {name = "", id = ""}
+    }
+}, "Option 1")
+
+-- Dropdown "Músicas e Memes Aleatório"
+createMusicDropdown("Músicas e Memes Aleatório", {
+    ["forro"] = {
+        {name = "ANXIETY (Amapiano Re-fix)", id = "101483901475189"}, 
+        {name = "Meu corpo, minhas regras", id = "127587901595282"},
+        {name = "$$$$gg$$$$gg", id = "137471775091253"},
+        {name = "Megalovania but its only the melodies", id = "104500091160463"},
+        
+        {name = "androphono strikes back", id = "78312089943968"},
+        {name = "Bamm Bamm", id = "128730685516895"},
+        {name = "chupa cabra", id = "132890273173295"},
+        {name = "longe de mais", id = "124478512057763"},
+        {name = "Garoto de Copacabana", id = "135648634110254"},
+        {name = "CELL!", id = "117634275895085"},
+        {name = "Boa vibe em Ubatuba", id = "139059061493558"},
+      
+        {name = "SLIP AWAY", id = "126152928520174"},
+        {name = "Alone in Motion", id = "122379348696948"},
+        {name = "Fade Away", id = "81002139735874"},
+        {name = "Wounds & Wishes", id = "109347979566607"},
+        {name = "Ascensão do Monarca", id = "101864243033211"},
+        {name = "carro do ovo", id = "3148329638"},
+        {name = "ingles bus (fling ou kill bus)", id = "123268013026823"},
+        {name = "MIKU MIKU HATSUNE", id = "112783541496955"},
+        {name = "Five Nights at Freddy's", id = "110733765539890"},
+        {name = "Rat Dance", id = "133496635668044"},
+        {name = "Escalando a Seleção Brasileira para a Copa", id = "116546457407236"},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""}
+    }
+}, "Option 1")
+
+-- Dropdown "Funk"
+createMusicDropdown("Funk", {
+    ["Funk"] = {
+        {name = "sua mulher funk", id = "90844637105538"},
+        {name = "fuga na viatura", id = "131891110268352"},
+        {name = "funkphonk fumando verde", id = "112143944982807"},
+        {name = "cauma xmara", id = "95664293972405"},
+        {name = "que que sharke", id = "129546408528391"},
+        {name = "Il Cacto Hipopotamo FUNK", id = "104491656009142"},
+        {name = "Espressora Signora FUNK", id = "123394392737234"},
+        {name = "trippi troop funk", id = "73049389767013"},
+        {name = "bombini funkphonk", id = "88814770244609"},
+        {name = "pre treino", id = "136869502216760"},
+        
+        {name = "CVRL", id = "124244582950595"},
+        {name = "batida Brega Violino (Beat Brega Funk)", id = "99399643204701"},
+        {name = "Dança do Canguru (Pke Gaz1nh)", id = "86876136192157"},
+        {name = "espere 30segundos!! Ondas sonoras", id = "127757321382838"},
+        {name = "MONTAGEM ARABIANA (Pke Gaz1nh)", id = "78076624091098"},
+        {name = "Manda o papo (NGI)", id = "132642647937688"},
+        {name = "Viver bem", id = "82805460494325"},
+        {name = "Faixa estronda", id = "121187736532042"},
+        {name = "Ritmo Pixelado", id = "93928823862203"},
+        {name = "Viagem Sonora", id = "79349174602261"},
+        
+        {name = "Melodia Virtual", id = "139147474886402"},
+        {name = "Melodia Serena", id = "97011217688307"},
+        {name = "SENTA", id = "124085422276732"},
+        {name = "TUNG TUNG TUNG TUNG SAHUR PHONK BRASILEIRO", id = "120353876640055"},
+        {name = "crazy-lol", id = "106958630419629"},
+        {name = "V7", id = "80348640826643"},
+        {name = "UIUAH", id = "82894376737849"},
+        {name = "meta ritmo", id = "110091098283354"},
+        {name = "CAPPUCCINO ASSASSINO (SPEDUP)", id = "132733033157915"},
+        {name = "haha (NGI)", id = "122114766584918"},
+        {name = "DO PO", id = "114207745067816"},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""}
+    }
+}, "Option 1")
+
+-- Dropdown "Phonk"
+createMusicDropdown("Phonk", {
+    ["phonk"] = {
+        {name = "wyles", id = "85385155970460"},
+        {name = "phonk kawai", id = "91502410121438"},
+        {name = "querendo da a bucet@", id = "72720721570850"},
+        {name = "vem no pocpoc", id = "102333419023382"},
+        {name = "tatiu wim", id = "122871512353520"},
+        {name = "novinha sapeca", id = "111668097052966"},
+        {name = "novinha representa", id = "93786060174790"},
+        {name = "phonk1", id = "77501611905348"},
+        {name = "phonk2", id = "126887144190812"},
+        {name = "phonk osadia", id = "88033569921555"},
+        {name = "phonk sarra", id = "132436320685732"},
+        {name = "relaionamento sem crush", id = "105832154444494"},
+        {name = "phonk3", id = "90323407842935"},
+        {name = "novinha dançapanpa", id = "132245626038510"},
+        {name = "phonk sexoagreçivo", id = "111995323199676"},
+        {name = "phonk4", id = "115016589376700"},
+        {name = "phonk5", id = "118740708757685"},
+        {name = "phonk6", id = "139435437308948"},
+        {name = "phonk chapaquente", id = "109189438638906"},
+        {name = "phonk rajada", id = "105126065014034"},
+    
+        {name = "rede globo", id = "138487820505005"},
+        {name = "phonk indiano", id = "87968531262747"},
+        {name = "vapo do vapo", id = "106317184644394"},
+        {name = "tutatatutata", id = "112068892721408"},
+        {name = "phonk slower", id = "122852029094656"},
+        {name = "phonk9", id = "91760524161503"},
+        {name = "phonk10", id = "73140398421340"},
+        
+        {name = "phonk11", id = "137962454483542"},
+        {name = "phonk12", id = "84733736048142"},
+        {name = "phonk13", id = "106322173003761"},
+        {name = "phonk14", id = "94604796823780"},
+        {name = "phonk15", id = "118063577904953"},
+        {name = "phonk16", id = "115567432786512"},
+        {name = "phonk toq", id = "71304501822029"},
+        {name = "phonk hey", id = "132218979961283"},
+  
+        {name = "phonk17", id = "102708912256857"},
+        {name = "phonk18", id = "140642559093189"},
+        {name = "phonk neve", id = "13530439660"},
+        {name = "phonk19", id = "87863924786534"},
+        {name = "phonk20", id = "133135085604736"},
+        {name = "phonk lento", id = "97258811783169"},
+        {name = "phonk21", id = "92308400487695"},
+        {name = "tipo wym", id = "88064647826500"},
+        {name = "estouradassa1", id = "92175624643620"},
+        {name = "estouradassa2", id = "108099943758978"},
+        {name = "Naaaaa", id = "109784877184952"},
+        {name = "trem", id = "114608169341947"},
+        {name = "eoropa", id = "111346133543699"},
+        {name = "atimosphekika", id = "77857496821844"},
+        {name = "phonk ALL THE TIME", id = "123809083385992"},
+ 
+        {name = "Lifelong Memory", id = "81929101024622"},
+        {name = "Automotivo Blondie (Pke Gaz1nh)", id = "74564219749776"},
+        {name = "สวัสดีคนไทย v2", id =  "118225359190317"},
+        {name = "MTG TU VAI SENTAR (Pke Gaz1nh)", id = "115317874112657"},
+        {name = "SARRA FUNK", id = "96249826607044"},
+        {name = "Catuquanvan", id = "88038595663211"},
+        {name = "F-D-1 (slowed)", id = "124958445624871"},
+        {name = "Sucessagem", id = "88551699463723"},
+        {name = "ILOVE phonksla", id = "82148953715595"},
+        {name = "SPEED SLIDE", id = "118959437310311"},
+        {name = "TOMA FUNK PHONK", id = "126291069838831"},
+        {name = "PASSO BEM SOLTO X NEW JAZZ", id = "122706595087279"},
+        {name = "MONTAGEM BIONICA DIAMANTE", id = "122338822665007"},
+        
+        {name = "BALA SELVAGEM!", id = "96180057167470"},
+        {name = "Luz <3", id = "74281337525581"},
+        {name = "COMO TU", id = "86928685812280"},
+        {name = "MONTAGEM SOLAR TROPICANO (SPEED UP)", id = "116461681407294"},
+        {name = "MONTAGEM SOLAR TROPICANO (SLOWED)", id = "109308273341422"},
+        {name = "YO DE TI", id = "125181345407169"},
+        {name = "Beauty, (Phonk), Super sped up", id = "71123357599630"},
+ 
+        {name = "MONTAGEM BOOMBOX DO MALA FUNK", id = "86537505028256"},
+        {name = "BRAZIL DO FUNK", id = "133498554139200"},
+        {name = "BRR BRR PATAPIM FUNK", id = "117170901476451"},
+        {name = "MONTAGEM TERRA BELA FUNK", id = "134770548505933"},
+        {name = "FUNK DO RAVE 1.0", id = "137135395010424"},
+        
+        {name = " Portao Funk", id = "70900514961735"},
+        {name = " Espaço Funk", id = "110519906029322"},
+        {name = " FUTABA", id = "91834632690710"},
+        {name = " Melódica Explosão De Melodia", id = "98371771055411"},
+        {name = " RASGO", id = "98267810117949"},
+        {name = " HIPNOTIZA", id = "117668905142866"},
+        {name = "CRISTAL NOTURNO", id = "103695219371872"},
+        {name = " SKY HIGH", id = "123517126955383"},
+        {name = "MIKU top", id = "102771149931910"},
+        {name = " ACABU SO FUNK", id = "127870227978818"},
+        {name = "CREATIFE FUNK", id = "130525387712209"},
+        {name = "GOTH FUNK", id = "97662362226511"},
+        {name = "PORTUGESE FUNK", id = "125858109122379"},
+        {name = "SUBURBANA", id = "139825057894568"},
+        {name = "ESPERA LA NOCHE FUNK", id = "139768056738146"},
+        {name = "SIN PERMISO FUNK", id = "92572896648274"},
+        {name = "MONTAGEM DACE RAT", id = "98711199754623"},
+        {name = " LOVELY FUNK", id = "130633105268814"},
+        {name = "STORYMODECOOL", id = "87115976125426"},
+        {name = "BLACK COFFEE FUNK", id = "82705137378395"},
+        {name = "KOBALT", id = "79381341943021"},
+        
+        {name = " andante bacterial", id = "105882833374061"},
+        {name = "ANGEL Speed Up", id = "139593870988593"},
+        {name = "LUTA ÉPICA", id = "73966367524216"},
+        {name = "MALDITA", id = "133814632960968"},
+        {name = "DA ZONA NTJ VERSON", id = "105770593501071"},
+        {name = "HIPNOTIZA", id = "132015050363205"},
+        {name = "MIDZUKI speed up", id = "129151948619922"},
+       
+        {name = "movimenta funk", id = "114994598691121"},
+        {name = "CRISTAL", id = "103445348511856"},
+        {name = "Letero funkphonk", id = "99409598156364"},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+      
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""},
+        {name = "", id = ""}
+    }
+}, "Option 1")
+
+Tab8:AddButton({
+    Name = "Stop",
+    Description = "ALL music",
+    Callback = function()
+        tocarMusica("")
+    end
+})
 
 ---------------------------------------------------------------------------------------------------------------------------------
                                                    -- === Tab 9: troll === --
