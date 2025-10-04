@@ -2485,8 +2485,8 @@ local function createMusicDropdown(title, musicOptions, defaultOption)
     })
 end
 
--- Dropdown "Forró"
-createMusicDropdown("Forró", {
+-- Dropdown "Forró e Sartanejo"
+createMusicDropdown("Forró e Sartanejo", {
     ["forro"] = {
         {name = "forró ja cansou", id = "74812784884330"},
         {name = "lenbro ate hoje", id = "71531533552899"},
@@ -2502,8 +2502,8 @@ createMusicDropdown("Forró", {
         {name = "Uno zero", id = "112959083808887"},
         {name = "Iate do neymar", id = "135738534706063"},
         {name = "Batidao na aldeia", id = "79953696595578"},
-        {name = "", id = ""},
-        {name = "", id = ""}
+        {name = "Ponto final", id = "106958630419629"},
+        {name = "Coração quieto", id = "93590122047380"}
     }
 }, "Option 1")
 
@@ -2548,10 +2548,10 @@ createMusicDropdown("Funk", {
         {name = "funkphonk fumando verde", id = "112143944982807"},
         {name = "cauma xmara", id = "95664293972405"},
         {name = "que que sharke", id = "129546408528391"},
-        {name = "Il Cacto Hipopotamo FUNK", id = "104491656009142"},
-        {name = "Espressora Signora FUNK", id = "123394392737234"},
-        {name = "trippi troop funk", id = "73049389767013"},
-        {name = "bombini funkphonk", id = "88814770244609"},
+        {name = "VAI SENTAR", id = "131847084942844"},
+        {name = "Os alemão", id = "85182585406642"},
+        {name = "", id = ""},
+        {name = "Pastor funk", id = "120324849313242"},
         {name = "pre treino", id = "136869502216760"},
         {name = "CVRL", id = "124244582950595"},
         {name = "batida Brega Violino (Beat Brega Funk)", id = "99399643204701"},
@@ -2566,16 +2566,16 @@ createMusicDropdown("Funk", {
         {name = "Melodia Virtual", id = "139147474886402"},
         {name = "Melodia Serena", id = "97011217688307"},
         {name = "SENTA", id = "124085422276732"},
-        {name = "TUNG TUNG TUNG TUNG SAHUR PHONK BRASILEIRO", id = "120353876640055"},
+        {name = "tritrigtrig", id = "127013133418864"},
         {name = "crazy-lol", id = "106958630419629"},
         {name = "V7", id = "80348640826643"},
         {name = "UIUAH", id = "82894376737849"},
         {name = "meta ritmo", id = "110091098283354"},
-        {name = "CAPPUCCINO ASSASSINO (SPEDUP)", id = "132733033157915"},
+        {name = "Escondido funk", id = "139693447546059"},
         {name = "haha (NGI)", id = "122114766584918"},
         {name = "DO PO", id = "114207745067816"},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "Olha o peru", id = "81700399219236"},
+        {name = "tira safada", id = "104621031886653"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
@@ -2700,15 +2700,20 @@ createMusicDropdown("Phonk", {
         {name = "movimenta funk", id = "114994598691121"},
         {name = "CRISTAL", id = "103445348511856"},
         {name = "Letero funkphonk", id = "99409598156364"},
-        {name = "MONTAGEM RUGADA", id = "105102042077619"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "MONTAGEM RUGADA", id = ""},
+        {name = "PASSO BEM SOLTO EDIT", id = "106185171358009"},
+        {name = "Rebola pro pai", id = "95046091312570"},
+        {name = "bota mais", id = "104481380959795"},
+        {name = "Solta o som xr", id = "132082397247824"},
+        {name = "VAPU VAPU EDIT", id = "132311372545619"},
+        {name = "PS K", id = "87022583947683"},
+        {name = "SILVIO SANTOS EDIT", id = "104828343009296"},
+        {name = "Problema seu", id = "122039107528238"}
+        {name = "Grave inglês", id = "99695831392938"}
+        {name = "Na festa dl fim de semana", id = "111318048787674"}
+        {name = "MELODIA DE VERÃO", id = "118507373399694"
         {name = "", id = ""}
+                
     }
 }, "Option 1")
 
