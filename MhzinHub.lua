@@ -1,4 +1,4 @@
--- // Mhzin Client Loading + Hub Purple
+-- // Mhzin Hub Loading + Hub Purple
 local CoreGui = game:GetService("CoreGui")
 
 -- ===========================
@@ -2519,8 +2519,8 @@ createMusicDropdown("Forró", {
     }
 }, "Option 1")
 
--- Dropdown "Músicas e Memes Aleatório"
-createMusicDropdown("Músicas e Memes Aleatório", {
+-- Dropdown "Rap pop e memes"
+createMusicDropdown("Rap pop e memes", {
     ["forro"] = {
         {name = "ANXIETY (Amapiano Re-fix)", id = "101483901475189"}, 
         {name = "Meu corpo, minhas regras", id = "127587901595282"},
@@ -2544,11 +2544,21 @@ createMusicDropdown("Músicas e Memes Aleatório", {
         {name = "Five Nights at Freddy's", id = "110733765539890"},
         {name = "Rat Dance", id = "133496635668044"},
         {name = "Escalando a Seleção Brasileira para a Copa", id = "116546457407236"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""}
+        {name = "Unleaked Rap", id = "76317000337303"},
+        {name = "Unleaked Song", id = "133112000959504"},
+        {name = "Unleaked Song2", id = "91287946779822"},
+        {name = "Methead", id = "121090628308892"},
+        {name = "Unleaked Rap2", id = "111023926621796"},
+        {name = "Unleaked Rap3", id = "91287946779822"},
+        {name = "Unleaked Rap4", id = "105308384160902"},
+        {name = "Unleaked Rap5", id = "133290646995722"},
+        {name = "Unleaked Rap6", id = "99348607998165"},
+        {name = "Unleaked Rap7", id = "79794805502115"},
+        {name = "Unleaked rap8", id = "103305578205915"},
+        {name = "Hard Rap", id = "129355058132629,
+        {name = "Unleaked Rap9", id = "105308384160902"},
+        {name = "Unleaked Rap10", id = "131865146401160"},
+        {name = "UNLEAKEK TRISTE", id = "112512564227744"}
     }
 }, "Option 1")
 
@@ -2560,7 +2570,7 @@ createMusicDropdown("Funk", {
         {name = "funkphonk fumando verde", id = "112143944982807"},
         {name = "cauma xmara", id = "95664293972405"},
         {name = "que que sharke", id = "129546408528391"},
-        {name = "Il Cacto Hipopotamo FUNK", id = "104491656009142"},
+        {name = "POPIPO MIKU", id = "115751117239202"},
         {name = "Espressora Signora FUNK", id = "123394392737234"},
         {name = "trippi troop funk", id = "73049389767013"},
         {name = "bombini funkphonk", id = "88814770244609"},
@@ -2578,19 +2588,19 @@ createMusicDropdown("Funk", {
         {name = "Melodia Virtual", id = "139147474886402"},
         {name = "Melodia Serena", id = "97011217688307"},
         {name = "SENTA", id = "124085422276732"},
-        {name = "TUNG TUNG TUNG TUNG SAHUR PHONK BRASILEIRO", id = "120353876640055"},
+        {name = "Sky High", id = "123517126955383"},
         {name = "crazy-lol", id = "106958630419629"},
         {name = "V7", id = "80348640826643"},
         {name = "UIUAH", id = "82894376737849"},
         {name = "meta ritmo", id = "110091098283354"},
-        {name = "CAPPUCCINO ASSASSINO (SPEDUP)", id = "132733033157915"},
+        {name = "DoomShame", id = "118636420770963"},
         {name = "haha (NGI)", id = "122114766584918"},
         {name = "DO PO", id = "114207745067816"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "Vukivu", id = "112308054092625"},
+        {name = "Uh Ah Ah", id = "86271123924168"},
+        {name = "Pull up Honda", id = "111042411995300"},
+        {name = "porradao", id = "125200420795517"},
+        {name = "Garam & Madu", id = "89831490305285"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
@@ -2625,7 +2635,7 @@ createMusicDropdown("Phonk", {
         {name = "phonk chapaquente", id = "109189438638906"},
         {name = "phonk rajada", id = "105126065014034"},
         {name = "rede globo", id = "138487820505005"},
-        {name = "phonk indiano", id = "87968531262747"},
+        {name = "I Got a Bit", id = "129098116998483"},
         {name = "vapo do vapo", id = "106317184644394"},
         {name = "tutatatutata", id = "112068892721408"},
         {name = "phonk slower", id = "122852029094656"},
@@ -2679,7 +2689,6 @@ createMusicDropdown("Phonk", {
         {name = "BRR BRR PATAPIM FUNK", id = "117170901476451"},
         {name = "MONTAGEM TERRA BELA FUNK", id = "134770548505933"},
         {name = "FUNK DO RAVE 1.0", id = "137135395010424"},
-        
         {name = " Portao Funk", id = "70900514961735"},
         {name = " Espaço Funk", id = "110519906029322"},
         {name = " FUTABA", id = "91834632690710"},
@@ -2708,19 +2717,20 @@ createMusicDropdown("Phonk", {
         {name = "DA ZONA NTJ VERSON", id = "105770593501071"},
         {name = "HIPNOTIZA", id = "132015050363205"},
         {name = "MIDZUKI speed up", id = "129151948619922"},
-        
         {name = "movimenta funk", id = "114994598691121"},
         {name = "CRISTAL", id = "103445348511856"},
         {name = "Letero funkphonk", id = "99409598156364"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""}
+        {name = "Melodia De verão", id = "118507373399694"},
+        {name = "Ritmo Selvagem", id = "105102042077619"},
+        {name = "Toma funk", id = "129098116998483"},
+        {name = "Brisa Retolam", id = "81308963147590"},
+        {name = "Yo Mf Party", id = "85443113642374"},
+        {name = "MONTAGEM TOMADA", id = "114727662968481"},
+        {name = "Tiktok brasil", id = "99731755429975"},
+        {name = "Water Instrument", id = "108616251212656"},
+        {name = "MONTAGEM PROBLEMA", id = "91338183079870"},
+        {name = "MONTAGEM AURA", id = "126132092368935"},
+        {name = "MASTER SWORD", id = "97394745434925"}
     }
 }, "Option 1")
 
