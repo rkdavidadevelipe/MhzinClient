@@ -1,4 +1,4 @@
--- // Phantom Client Loading + Hub Purple
+-- // HavenX Client Loading + Hub Purple
 local CoreGui = game:GetService("CoreGui")
 
 -- ===========================
@@ -140,9 +140,9 @@ end)
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/Library-ui/refs/heads/main/Redzhubui"))()
 
 local Window = redzlib:MakeWindow({
-    Title = "Phantom Client | Brookhaven RP 🌌🏡 4.1",
+    Title = "HavenX Client | Brookhaven RP 🎖️⚡ 5.1",
     SubTitle = "by The Darknesxz",
-    SaveFolder = "testando Phantom Client"
+    SaveFolder = "testando HavenX Client"
   })
 
   Window:AddMinimizeButton({
@@ -173,10 +173,10 @@ local Tab11 = Window:MakeTab({"Scripts", "scroll"})
 Tab1:AddSection({"Créditos do Hub"})
 
 Tab1:AddDiscordInvite({
-    Name = "Phantom Client",
-    Description = "https://discord.gg/Mr646TwM",
+    Name = "HavenX Client",
+    Description = "Server Oficial cross trade e script",
     Logo = "rbxassetid://97023202251640",
-    Invite = "https://discord.gg/Mr646TwM",
+    Invite = "https://discord.gg/6DTNCx4Q2F",
 })
 
 
@@ -1283,7 +1283,7 @@ Tab4:AddButton({
 })
 
 Tab4:AddParagraph({
-    Title = "to sem ideias para colocar aqui._.",
+    Title = "Jaja vem mais bb._.",
     Content = ""
 })
 
