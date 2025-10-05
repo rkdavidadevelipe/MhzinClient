@@ -141,7 +141,7 @@ local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao1
 
 local Window = redzlib:MakeWindow({
     Title = "HavenX Client | Brookhaven RP 🎖️⚡ 5.1",
-    SubTitle = "by The Darknesxz",
+    SubTitle = "by The Wolf",
     SaveFolder = "testando HavenX Client"
   })
 
@@ -2514,7 +2514,7 @@ createMusicDropdown("Forró", {
         {name = "Uno zero", id = "112959083808887"},
         {name = "Iate do neymar", id = "135738534706063"},
         {name = "Batidao na aldeia", id = "79953696595578"},
-        {name = "", id = ""},
+        {name = "SOFRÊNCIA", id = "106958630419629"},
         {name = "", id = ""}
     }
 }, "Option 1")
@@ -2545,7 +2545,7 @@ createMusicDropdown("Músicas e Memes Aleatório", {
         {name = "Rat Dance", id = "133496635668044"},
         {name = "Escalando a Seleção Brasileira para a Copa", id = "116546457407236"},
         {name = "TOMA FUNK", id = "129098116998483"},
-        {name = "", id = ""},
+        {name = "PASTOR MIRIM FUNK", id = "120324849313242"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""}
@@ -2562,8 +2562,8 @@ createMusicDropdown("Funk", {
         {name = "que que sharke", id = "129546408528391"},
         {name = "Il Cacto Hipopotamo FUNK", id = "104491656009142"},
         {name = "Espressora Signora FUNK", id = "123394392737234"},
-        {name = "trippi troop funk", id = "73049389767013"},
-        {name = "bombini funkphonk", id = "88814770244609"},
+        {name = "VEM POCPOCPOC", id = "76312991186384"},
+        {name = "MONTAGEM SENTO REBOLANDO", id = "79120642849019"},
         {name = "pre treino", id = "136869502216760"},
         {name = "CVRL", id = "124244582950595"},
         {name = "batida Brega Violino (Beat Brega Funk)", id = "99399643204701"},
@@ -2578,20 +2578,20 @@ createMusicDropdown("Funk", {
         {name = "Melodia Virtual", id = "139147474886402"},
         {name = "Melodia Serena", id = "97011217688307"},
         {name = "SENTA", id = "124085422276732"},
-        {name = "TUNG TUNG TUNG TUNG SAHUR PHONK BRASILEIRO", id = "120353876640055"},
+        {name = "MONTAGEM MANDELAO", id = "132642647937688"},
         {name = "crazy-lol", id = "106958630419629"},
         {name = "V7", id = "80348640826643"},
         {name = "UIUAH", id = "82894376737849"},
         {name = "meta ritmo", id = "110091098283354"},
-        {name = "CAPPUCCINO ASSASSINO (SPEDUP)", id = "132733033157915"},
+        {name = "MONTAGEM ESTELIONATO", id = "72182615662988"},
         {name = "haha (NGI)", id = "122114766584918"},
         {name = "DO PO", id = "114207745067816"},
-        {name = "MELODIA DE VERÃO", id = "118507373399694"},
+        {name = "BEAT ALUCINANTE", id = "1235156257"},
         {name = "RITMO SELVAGEM", id = "105102042077619"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "MONTAGEM ABSORÇÃO", id = "82411642961457"},
+        {name = "MONTAGEM MICHAEL", id = "118607303205005"},
+        {name = "MONTAGEM SADNESS", id = "97567416166163"},
+        {name = "OWOWOWOW", id = "81700399219236"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
@@ -2676,7 +2676,7 @@ createMusicDropdown("Phonk", {
         {name = "Beauty, (Phonk), Super sped up", id = "71123357599630"},
         {name = "MONTAGEM BOOMBOX DO MALA FUNK", id = "86537505028256"},
         {name = "BRAZIL DO FUNK", id = "133498554139200"},
-        {name = "BRR BRR PATAPIM FUNK", id = "117170901476451"},
+        {name = "MONTAGEM 3 STARS", id = "127504762051765"},
         {name = "MONTAGEM TERRA BELA FUNK", id = "134770548505933"},
         {name = "FUNK DO RAVE 1.0", id = "137135395010424"},
         
@@ -2711,15 +2711,15 @@ createMusicDropdown("Phonk", {
         
         {name = "movimenta funk", id = "114994598691121"},
         {name = "CRISTAL", id = "103445348511856"},
-        {name = "Letero funkphonk", id = "99409598156364"},
-        {name = "TOMA FUNK", id = "129098116998483"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "MELODIA DE VERÃO", id = "118507373399694"},
+        {name = "Automotivo vem dançar", id = "73962723234161"},
+        {name = "MELODIA VV", id = "96974354995715"},
+        {name = "MONTAGEM ALEMÃO", id = "85182585406642"},
+        {name = "MONTAGEM POSE", id = "88339486019486"},
+        {name = "MONTAGEM RITMADA4", id = "83331623293224"},
+        {name = "MONTAGEM VOZ FININHA", id = "87022583947683"},
+        {name = "SININHO SOMBRIO", id = "75277620053736"},
+        {name = "VOCÊ SE ENTREGA PRA MIN", id = "131847084942844"},
         {name = "", id = ""}
     }
 }, "Option 1")
