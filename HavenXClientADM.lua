@@ -8,9 +8,9 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 
 -- Criar Janela
 local Window = WindUI:CreateWindow({
-    Title = "Kakah Hub - Painel ADM",
+    Title = "HavenXClient - Painel ADM",
     Icon = "shield",
-    Author = "by Kakah",
+    Author = "by The Wolf",
     Theme = "Dark",
     Size = UDim2.fromOffset(580, 460),
 })
@@ -24,7 +24,7 @@ local Tab = Window:Tab({
 -- Notificação inicial
 WindUI:Notify({
     Title = "Painel Admin",
-    Content = "Kakah Hub ADM carregado por "..player.DisplayName,
+    Content = "HavenXClient ADM carregado por "..player.DisplayName,
     Duration = 3,
     Icon = "shield",
 })
