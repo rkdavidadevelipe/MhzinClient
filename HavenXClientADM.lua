@@ -1,7 +1,7 @@
 -- === WHITELIST PROTEGIDA ===
 local NICKS_WHITELIST = {
     "Mhzin19", -- dono
-    "Kakah", -- autorizado
+    "firecrowblackice", -- autorizado
 }
 
 local Players = game:GetService("Players")
