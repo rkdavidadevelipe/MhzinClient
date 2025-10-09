@@ -8,7 +8,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 if not table.find(NICKS_WHITELIST, player.Name) then
-    warn("[Kakah Hub] Acesso negado para " .. player.Name .. ". Você não está na whitelist.")
+    warn("[HavenXClient] Acesso negado para " .. player.Name .. ". Você não está na whitelist.")
     return -- impede execução do resto do script
 end
 
@@ -22,7 +22,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 
 -- Criar Janela
 local Window = WindUI:CreateWindow({
-    Title = "Kakah Hub - Painel ADM",
+    Title = "HavenXClient - Painel ADM",
     Icon = "shield",
     Author = "by Kakah",
     Theme = "Dark",
@@ -38,7 +38,7 @@ local Tab = Window:Tab({
 -- Notificação inicial
 WindUI:Notify({
     Title = "Painel Admin",
-    Content = "Kakah Hub ADM carregado por "..player.DisplayName,
+    Content = "HavenXClient ADM carregado por "..player.DisplayName,
     Duration = 3,
     Icon = "shield",
 })
