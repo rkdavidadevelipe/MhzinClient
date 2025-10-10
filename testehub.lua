@@ -4890,6 +4890,6 @@ Tab12:AddButton({
     Name = "Painel Admin",
     Description = "O painel Só vai executa se o seu nome estiver Na white list",
     Callback = function()
-        loadstring(game:HttpGet("https://pastefy.app/KLFLIa5Q/raw", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rkdavidadevelipe/MhzinClient/refs/heads/main/HavenXClientADM.lua"))()
     end
 })
