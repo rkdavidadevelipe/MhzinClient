@@ -17,7 +17,7 @@ Gui.Parent = PlayerGui
 
 --== Adiciona música ==
 local Sound = Instance.new("Sound")
-Sound.SoundId = "rbxassetid://1841647093"
+Sound.SoundId = "rbxassetid://9125402735"
 Sound.Looped = true
 Sound.Volume = 0.5
 Sound.Parent = Gui
@@ -42,7 +42,7 @@ local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(0, 500, 0, 80)
 Title.Position = UDim2.new(0.5, -250, 0.15, 0)
 Title.BackgroundTransparency = 1
-Title.Text = "⚡ PHANTOM CLIENT ⚡"
+Title.Text = "⚡ HavenXClient ⚡"
 Title.Font = Enum.Font.GothamBlack
 Title.TextScaled = true
 Title.TextColor3 = Color3.fromRGB(255, 220, 255)
@@ -55,7 +55,7 @@ local Logo = Instance.new("ImageLabel")
 Logo.Size = UDim2.new(0, 70, 0, 70)
 Logo.Position = UDim2.new(0.5, -35, 0.5, -35) -- centralizado
 Logo.BackgroundTransparency = 1
-Logo.Image = "rbxassetid://97023202251640"
+Logo.Image = "rbxassetid://9530177909"
 Logo.ImageTransparency = 1
 Logo.Parent = Gui
 
