@@ -1,4 +1,4 @@
---// 🌌 Phantom Client - Tela de Carregamento Futurista 💜
+--// 🌌 HavenXClient - Tela de Carregamento Futurista 💜
 -- LocalScript -> StarterPlayerScripts
 
 local TweenService = game:GetService("TweenService")
@@ -55,7 +55,7 @@ local Logo = Instance.new("ImageLabel")
 Logo.Size = UDim2.new(0, 70, 0, 70)
 Logo.Position = UDim2.new(0.5, -35, 0.5, -35) -- centralizado
 Logo.BackgroundTransparency = 1
-Logo.Image = "rbxassetid://9530177909"
+Logo.Image = "rbxassetid://10511856020"
 Logo.ImageTransparency = 1
 Logo.Parent = Gui
 
@@ -196,7 +196,7 @@ end
 Sound:Stop()
 Gui:Destroy()
 
-print("✅ Phantom Client carregado com sucesso 💜")
+print("✅ HavenXClient carregado com sucesso 💜")
 
 -- ===========================
 -- PARTE 2 - HUB FUNCIONAL
@@ -205,13 +205,13 @@ print("✅ Phantom Client carregado com sucesso 💜")
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/nickainzn/Uimeuamg/main/HubUi.lua"))()
 
 local Window = redzlib:MakeWindow({
-    Title = "Phantom Client | Brookhaven RP 🌌🏡 4.1",
+    Title = "HavenXClient | Brookhaven RP 🌌🏡 1.1",
     SubTitle = "by The Darknesxz Dev",
-    SaveFolder = "testando Phantom Client"
+    SaveFolder = "testando HavenXClient"
   })
 
   Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://97023202251640", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://8964489645", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
