@@ -55,7 +55,7 @@ local Logo = Instance.new("ImageLabel")
 Logo.Size = UDim2.new(0, 70, 0, 70)
 Logo.Position = UDim2.new(0.5, -35, 0.5, -35) -- centralizado
 Logo.BackgroundTransparency = 1
-Logo.Image = "rbxassetid://6768917255"
+Logo.Image = "rbxassetid://7229442422"
 Logo.ImageTransparency = 1
 Logo.Parent = Gui
 
@@ -206,7 +206,7 @@ local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/nicka
 
 local Window = redzlib:MakeWindow({
     Title = "HavenXClient | Brookhaven RP 🌌🏡 1.1",
-    SubTitle = "by The Darknesxz Dev",
+    SubTitle = "by The Wolf Dev",
     SaveFolder = "testando HavenXClient"
   })
 
@@ -238,10 +238,10 @@ local Tab12 = Window:MakeTab({"Painel Admin","shield"})
 Tab1:AddSection({"Créditos do Hub"})
 
 Tab1:AddDiscordInvite({
-    Name = "Phantom Client",
-    Description = "https://discord.gg/EYBBJdyEB",
-    Logo = "rbxassetid://97023202251640",
-    Invite = "https://discord.gg/EYBBJdyEB",
+    Name = "HavenXClient",
+    Description = "https://discord.gg/EqQ23SGVj",
+    Logo = "rbxassetid://7229442422",
+    Invite = "https://discord.gg/EqQ23SGVj",
 })
 
 
@@ -271,15 +271,15 @@ local Paragraph = Tab1:AddParagraph({"Execultor", executorName})
 
 local Section = Tab1:AddSection({"versao do Hub 3.7"})
 
-local Paragraph = Tab1:AddParagraph({"Criadores", "The Darknesxz Dev"})
+local Paragraph = Tab1:AddParagraph({"Criadores", "The Wolf Dev"})
 
 
   
   Tab1:AddButton({
     Name = " - Copiar @ do TikTok",
     Callback = function()
-      setclipboard("@darkzim.aepp") -- Copia o @
-      setclipboard("https://www.tiktok.com/@darkzim.aepp?_t=ZM-8z75NNjT9yI&_r=1") -- Copia o link também, se quiser só o @, remova esta linha
+      setclipboard("@ph.luizim") -- Copia o @
+      setclipboard("tiktok.com/@ph.luizim") -- Copia o link também, se quiser só o @, remova esta linha
       
     end
   })
@@ -384,7 +384,7 @@ end
 Tab2:AddTextBox({
     Name = "Nome do Jogador",
     Description = "Digite parte do nome",
-    PlaceholderText = "ex: lo → The Darknesxz",
+    PlaceholderText = "ex: lo → The Wolf",
     Callback = function(Value)
         local foundPlayer = findPlayerByPartialName(Value)
         if foundPlayer then
@@ -2620,15 +2620,15 @@ createMusicDropdown("Músicas e Memes Aleatório", {
 -- Dropdown "Funk"
 createMusicDropdown("Funk", {
     ["Funk"] = {
-        {name = "beat alucinante", id = "12435156257"},
+        {name = "Fire house", id = "82642122299161"},
         {name = "fuga na viatura", id = "131891110268352"},
         {name = "funkphonk fumando verde", id = "112143944982807"},
         {name = "cauma xmara", id = "95664293972405"},
         {name = "que que sharke", id = "129546408528391"},
-        {name = "Il Cacto Hipopotamo FUNK", id = "104491656009142"},
-        {name = "Espressora Signora FUNK", id = "123394392737234"},
-        {name = "trippi troop funk", id = "73049389767013"},
-        {name = "bombini funkphonk", id = "88814770244609"},
+        {name = "montagem pose", id = "88339486019486"},
+        {name = "Messi vs Ronaldo", id = "125366451135730"},
+        {name = "automotivo vem dança", id = "73962723234161"},
+        {name = "montagem michael", id = "118607303205005"},
         {name = "pre treino", id = "136869502216760"},
         {name = "CVRL", id = "124244582950595"},
         {name = "batida Brega Violino (Beat Brega Funk)", id = "99399643204701"},
@@ -2643,19 +2643,19 @@ createMusicDropdown("Funk", {
         {name = "Melodia Virtual", id = "139147474886402"},
         {name = "Melodia Serena", id = "97011217688307"},
         {name = "SENTA", id = "124085422276732"},
-        {name = "TUNG TUNG TUNG TUNG SAHUR PHONK BRASILEIRO", id = "120353876640055"},
+        {name = "montagem sadness", id = "97567416166163"},
         {name = "crazy-lol", id = "106958630419629"},
         {name = "V7", id = "80348640826643"},
         {name = "UIUAH", id = "82894376737849"},
         {name = "meta ritmo", id = "110091098283354"},
-        {name = "CAPPUCCINO ASSASSINO (SPEDUP)", id = "132733033157915"},
+        {name = "montagem ritmada 4", id = "83331623293224"},
         {name = "haha (NGI)", id = "122114766584918"},
         {name = "DO PO", id = "114207745067816"},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "montagem rebolando", id = "79120642849019"},
+        {name = "montagem voz fininha", id = "87022583947683"},
+        {name = "sininho sombrio", id = "75277620053736"},
+        {name = "vem no poc poc", id = "76312991186384"},
+        {name = "você se entraga pra min", id = "131847084942844"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
@@ -2672,8 +2672,8 @@ createMusicDropdown("Phonk", {
         {name = "wyles", id = "85385155970460"},
         {name = "phonk kawai", id = "91502410121438"},
         {name = "querendo da a bucet@", id = "72720721570850"},
-        {name = "vem no pocpoc", id = "102333419023382"},
-        {name = "tatiu wim", id = "122871512353520"},
+        {name = "Melodia VV", id = "96974354995715"},
+        {name = "montagem 3 stars", id = "127504762051765"},
         {name = "novinha sapeca", id = "111668097052966"},
         {name = "novinha representa", id = "93786060174790"},
         {name = "phonk1", id = "77501611905348"},
@@ -2775,9 +2775,9 @@ createMusicDropdown("Phonk", {
         {name = "MIDZUKI speed up", id = "129151948619922"},
         
         {name = "movimenta funk", id = "114994598691121"},
-        {name = "CRISTAL", id = "103445348511856"},
-        {name = "Letero funkphonk", id = "99409598156364"},
-        {name = "", id = ""},
+        {name = "montagem mandelao", id = "132642647937688"},
+        {name = "Montagem Absorção", id = "82411642961457"},
+        {name = "Montagem estelionato", id = "72182615662988"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
