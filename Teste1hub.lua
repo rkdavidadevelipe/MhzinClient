@@ -55,7 +55,7 @@ local Logo = Instance.new("ImageLabel")
 Logo.Size = UDim2.new(0, 70, 0, 70)
 Logo.Position = UDim2.new(0.5, -35, 0.5, -35) -- centralizado
 Logo.BackgroundTransparency = 1
-Logo.Image = "rbxassetid://10511856020"
+Logo.Image = "rbxassetid://6768917255"
 Logo.ImageTransparency = 1
 Logo.Parent = Gui
 
@@ -211,7 +211,7 @@ local Window = redzlib:MakeWindow({
   })
 
   Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://8964489645", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://7229442422", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
@@ -2620,7 +2620,7 @@ createMusicDropdown("Músicas e Memes Aleatório", {
 -- Dropdown "Funk"
 createMusicDropdown("Funk", {
     ["Funk"] = {
-        {name = "sua mulher funk", id = "90844637105538"},
+        {name = "beat alucinante", id = "12435156257"},
         {name = "fuga na viatura", id = "131891110268352"},
         {name = "funkphonk fumando verde", id = "112143944982807"},
         {name = "cauma xmara", id = "95664293972405"},
