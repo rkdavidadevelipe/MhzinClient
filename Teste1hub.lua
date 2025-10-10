@@ -2579,8 +2579,8 @@ createMusicDropdown("Forró", {
         {name = "Uno zero", id = "112959083808887"},
         {name = "Iate do neymar", id = "135738534706063"},
         {name = "Batidao na aldeia", id = "79953696595578"},
-        {name = "", id = ""},
-        {name = "", id = ""}
+        {name = "sofrência", id = "106958630419629"},
+        {name = "pira nos caipiras", id = "8098264005"}
     }
 }, "Option 1")
 
@@ -2656,8 +2656,8 @@ createMusicDropdown("Funk", {
         {name = "sininho sombrio", id = "75277620053736"},
         {name = "vem no poc poc", id = "76312991186384"},
         {name = "você se entraga pra min", id = "131847084942844"},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "ou loca", id = "131847084942844"},
+        {name = "pastor mirim funk", id = "120324849313242"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
@@ -2778,8 +2778,8 @@ createMusicDropdown("Phonk", {
         {name = "montagem mandelao", id = "132642647937688"},
         {name = "Montagem Absorção", id = "82411642961457"},
         {name = "Montagem estelionato", id = "72182615662988"},
-        {name = "", id = ""},
-        {name = "", id = ""},
+        {name = "tropa jamal", id = "139693447546059"},
+        {name = "baile", id = "85182585406642"},
         {name = "", id = ""},
         {name = "", id = ""},
         {name = "", id = ""},
