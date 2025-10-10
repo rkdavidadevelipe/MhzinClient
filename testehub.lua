@@ -1,4 +1,4 @@
---// 🌌 Phantom Client - Tela de Carregamento Futurista 💜
+--// 🌌 HavenXClient - Tela de Carregamento Futurista 💜
 -- LocalScript -> StarterPlayerScripts
 
 local TweenService = game:GetService("TweenService")
@@ -10,7 +10,7 @@ local PlayerGui = Player:WaitForChild("PlayerGui")
 
 --== GUI PRINCIPAL ==--
 local Gui = Instance.new("ScreenGui")
-Gui.Name = "PhantomLoading"
+Gui.Name = "HavenXClient Loading"
 Gui.IgnoreGuiInset = true
 Gui.ResetOnSpawn = false
 Gui.Parent = PlayerGui
@@ -42,7 +42,7 @@ local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(0, 500, 0, 80)
 Title.Position = UDim2.new(0.5, -250, 0.15, 0)
 Title.BackgroundTransparency = 1
-Title.Text = "⚡ PHANTOM CLIENT ⚡"
+Title.Text = "⚡ HavenXClient ⚡"
 Title.Font = Enum.Font.GothamBlack
 Title.TextScaled = true
 Title.TextColor3 = Color3.fromRGB(255, 220, 255)
@@ -196,7 +196,7 @@ end
 Sound:Stop()
 Gui:Destroy()
 
-print("✅ Phantom Client carregado com sucesso 💜")
+print("✅ HavenXClient carregado com sucesso 💜")
 
 -- ===========================
 -- PARTE 2 - HUB FUNCIONAL
@@ -205,13 +205,13 @@ print("✅ Phantom Client carregado com sucesso 💜")
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/nickainzn/Uimeuamg/main/HubUi.lua"))()
 
 local Window = redzlib:MakeWindow({
-    Title = "Phantom Client | Brookhaven RP 🌌🏡 4.1",
-    SubTitle = "by The Darknesxz Dev",
-    SaveFolder = "testando Phantom Client"
+    Title = "HavenXClient | Brookhaven RP 🌌🏡 1.1",
+    SubTitle = "by The Wolf Dev",
+    SaveFolder = "testando HavenXClient"
   })
 
   Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://97023202251640", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://9242918232", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
@@ -238,10 +238,10 @@ local Tab12 = Window:MakeTab({"Painel Admin","shield"})
 Tab1:AddSection({"Créditos do Hub"})
 
 Tab1:AddDiscordInvite({
-    Name = "Phantom Client",
-    Description = "https://discord.gg/EYBBJdyEB",
-    Logo = "rbxassetid://97023202251640",
-    Invite = "https://discord.gg/EYBBJdyEB",
+    Name = "HavenXClient",
+    Description = "",
+    Logo = "rbxassetid://9242918232",
+    Invite = "",
 })
 
 
@@ -269,17 +269,17 @@ local executorName = detectExecutor()
 
 local Paragraph = Tab1:AddParagraph({"Execultor", executorName})
 
-local Section = Tab1:AddSection({"versao do Hub 3.7"})
+local Section = Tab1:AddSection({"versao do Hub 1.1"})
 
-local Paragraph = Tab1:AddParagraph({"Criadores", "The Darknesxz Dev"})
+local Paragraph = Tab1:AddParagraph({"Criadores", "The Wolf Dev"})
 
 
   
   Tab1:AddButton({
     Name = " - Copiar @ do TikTok",
     Callback = function()
-      setclipboard("@darkzim.aepp") -- Copia o @
-      setclipboard("https://www.tiktok.com/@darkzim.aepp?_t=ZM-8z75NNjT9yI&_r=1") -- Copia o link também, se quiser só o @, remova esta linha
+      setclipboard("") -- Copia o @
+      setclipboard("") -- Copia o link também, se quiser só o @, remova esta linha
       
     end
   })
@@ -384,7 +384,7 @@ end
 Tab2:AddTextBox({
     Name = "Nome do Jogador",
     Description = "Digite parte do nome",
-    PlaceholderText = "ex: lo → The Darknesxz",
+    PlaceholderText = "ex: lo → The Wolf",
     Callback = function(Value)
         local foundPlayer = findPlayerByPartialName(Value)
         if foundPlayer then
