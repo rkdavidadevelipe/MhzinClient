@@ -1,4 +1,4 @@
---// 🌌 HavenXClient - Tela de Carregamento Futurista 💜
+xa--// 🌌 HavenXClient - Tela de Carregamento Futurista 💜
 -- LocalScript -> StarterPlayerScripts
 
 local TweenService = game:GetService("TweenService")
@@ -55,7 +55,7 @@ local Logo = Instance.new("ImageLabel")
 Logo.Size = UDim2.new(0, 70, 0, 70)
 Logo.Position = UDim2.new(0.5, -35, 0.5, -35) -- centralizado
 Logo.BackgroundTransparency = 1
-Logo.Image = "rbxassetid://97023202251640"
+Logo.Image = "rbxassetid://9530177909"
 Logo.ImageTransparency = 1
 Logo.Parent = Gui
 
@@ -64,7 +64,7 @@ local LoadingText = Instance.new("TextLabel")
 LoadingText.Size = UDim2.new(0, 400, 0, 50)
 LoadingText.Position = UDim2.new(0.5, -200, 0.7, 0)
 LoadingText.BackgroundTransparency = 1
-LoadingText.Text = "Iniciando Phantom Client..."
+LoadingText.Text = "Iniciando HavenXCliet..."
 LoadingText.Font = Enum.Font.GothamBold
 LoadingText.TextSize = 28
 LoadingText.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -211,7 +211,7 @@ local Window = redzlib:MakeWindow({
   })
 
   Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://100797988580692", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://9530177909", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
@@ -240,7 +240,7 @@ Tab1:AddSection({"Créditos do Hub"})
 Tab1:AddDiscordInvite({
     Name = "HavenXClient",
     Description = "",
-    Logo = "rbxassetid://100797988580692",
+    Logo = "rbxassetid://9530177909",
     Invite = "",
 })
 
@@ -2620,7 +2620,7 @@ createMusicDropdown("Músicas e Memes Aleatório", {
 -- Dropdown "Funk"
 createMusicDropdown("Funk", {
     ["Funk"] = {
-        {name = "sua mulher funk", id = "90844637105538"},
+        {name = "beat alucinante", id = "12435156257"},
         {name = "fuga na viatura", id = "131891110268352"},
         {name = "funkphonk fumando verde", id = "112143944982807"},
         {name = "cauma xmara", id = "95664293972405"},
